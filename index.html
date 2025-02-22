@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport" />
     <link rel="alternate icon" type="image/png" href="/img/favicon.ico">
-    <title>CSGC</title>
+    <title>SAO</title>
     
 <link rel="stylesheet" href="/css/reset.css">
 
@@ -30,54 +30,49 @@
                 <div class="post-list">
     
     <div class="post">
-        <!-- <a class="post-title" href="/2024/07/19/paper/">Semi-Supervised Language-Conditioned Grasping with Curriculum-Scheduled Augmentation and Geometric Consistency</a> -->
-        <div class="post-title" >Semi-Supervised Language-Conditioned Grasping with Curriculum-Scheduled Augmentation and Geometric Consistency</div>
-        <div class="post-authors" >Jialong Xie, Fengyu Zhou, Jin Liu, and Chaoqun Wang</div>
+        <!-- <a class="post-title" href="/2025/02/22/paper/">Seeing and Acting as One: Embodied Perception with Large Language Model under Visual Confusion and Occlusion</a> -->
+        <div class="post-title" >Seeing and Acting as One: Embodied Perception with Large Language Model under Visual Confusion and Occlusion</div>
+        <div class="post-authors" >Xinxin Zhu, Jialong Xie, Fengyu Zhou, Yue Meng, Chaoqun Wang</div>
         <div class="post-affiliations" >Shandong University</div>
         <div class="head-icon"> 
 
             
    
             
-                <a class="icon-container" target="_blank" rel="noopener" href="https://youtu.be/iKC78uq1NxU" title="youtube">
-                    <i class="fa-brands fa-square-youtube"></i>
-                </a>
-            
 
-            
-                <a class="icon-container" target="_blank" rel="noopener" href="https://drive.google.com/drive/folders/1_4buRsO26159XgCH2uPt4VTMq5Dz0q_u?usp=drive_link" title="dataset">
-                    <i class="fa-brands fa-google-drive"></i>
-                </a>
             
 
         </div>
         <div class="line"></div>
         <div class="post-abstract-title">Abstract</div>
-        <div class="post-abstract" >Language-conditioned grasping (LCG) is an essential skill for robotic manipulation and has recently attracted increasing interest. However, existing methods often need numerous paired image-text-pose annotations for fully supervised learning, which are tedious and expensive. In this paper, we first propose a semi-supervised language-conditioned grasping framework that achieves data-efficient object grounding and grasping detection according to the language description. Recent studies on semi-supervised learning have made progress in vision tasks, e.g., semantic segmentation. However, these methods suffer from over-distorted data perturbations, resulting in slow and unstable convergence for multi-modal inputs in the early stage. Moreover, they do not consider the consistency between perceptive and grasping location, leading to hand-eye inconsistency and low grasp accuracy. Therefore, we introduce a Curriculum-Scheduled augmentation and Geometric Consistency (CSGC) strategy to overcome above problem. Concretely, We design a curriculum-scheduled augmentation strategy to progressively improve data diversity from easy to difficult, facilitating stable knowledge distillation and model's convergence. Meanwhile, we present a geometry-aware consistency regularization to constrain the region alignment between object perception and grasping confidence, improving the quality of pseudo-labels and grasp accuracy. Extensive experimental results demonstrate the effectiveness and practicability of our proposed method in the limited labeled data.</div>
-        <div class="post-video-title">
-            <i class="fa fa-hand-o-right"></i><a  class= 'post-video-title' target="_blank" rel="noopener" href="https://youtu.be/iKC78uq1NxU">Video on YouTube</a><i class="fa fa-hand-o-left"></i>
-            
-        </div>
+        <div class="post-abstract" >Visual confusion and occlusion are common and challenging situations for robotic manipulation in a household environment. Most existing methods employ coarse object categories (e.g., bottle) or local features (e.g., color) to realize object grounding in target-oriented manipulation. Still, these methods do not consider the importance of text cues on the surface of the target, leading to the misidentifying of similar appearance objects, e.g., vitamins C and D pills can only be identified by the text label of bottles. Meanwhile, they ignore the subjective initiative of the robot in the perception process, resulting in the limitation of perspective in complex environments.To address the above issues, we propose an embodied perception strategy dubbed Seeing and Acting as One (SAO), which integrates fine-grained scene graphs with large language models (LLMs) to enhance the efficiency and comprehensiveness of robotic perception. Concretely, we first design a fine-grained scene understanding (FSU) module to capture visual attributes and fine-grained text of objects in the scene. Subsequently, a target-oriented concept scene graph (TCSGC) is constructed, which contains matching scores, fine-grained text descriptions on the surface of candidates, and space relations of fine-grained text and object location. Finally, triadic prompt engineering (TPE) is designed for LLMs to generate control strategies of robot actions such as viewpoints changing, observing, and object rotating, which facilitates the robot to explore more details of the target object in clutter. In real-world experiments, our method achieves a grasping accuracy of 90.1%, demonstrating its effectiveness and superiority.</div>
         
-            <div class="video-container">
-                <iframe
-                width="560"
-                height="315"
-                src="https://www.youtube.com/embed/iKC78uq1NxU"
-                frameborder="0"
-                allowfullscreen
-                ></iframe>
-            </div>
+
         
         <div class="post-except">
-            <h2 id="Comparison"><a href="#Comparison" class="headerlink" title="Comparison"></a>Comparison</h2><p>Comparison between common strategy in semi-supervised learning and our semi-supervised method. Our semi-supervised framework uses a curriculum-scheduled augmentation to progressively increase input perturbation and a geometric consistency strategy to dynamically adjust thresholds and align perceptive and grasping locations, facilitating stable convergence and perception-grasping consistency.<br><img src="/images/scheme.jpg" alt="knowledge-driven robotic grasping framework"></p>
-<h2 id="Overview-of-our-CSGC-framework"><a href="#Overview-of-our-CSGC-framework" class="headerlink" title="Overview of our CSGC framework"></a>Overview of our CSGC framework</h2><p>An overview of our CSGC framework. Firstly, curriculum-scheduled augmentation progressively selects various augmentation operations to increase the input perturbation of the student as training progresses.  Then, the teacher predicts score maps of segmentation and grasping detection. Sequentially,  the geometric consistency regularization part utilizes the region-consistent pseudo-label filtering (RCPF) to produce pseudo-labels and the overall optimization objective  to train parameter of the student. Finally, the parameter of teacher is updated by the exponential moving averaging (EMA).<br><img src="/images/OurMethod.jpg" alt="Overview of KARNet"></p>
-<h2 id="Qualitative-results"><a href="#Qualitative-results" class="headerlink" title="Qualitative results"></a>Qualitative results</h2><p>1.Qualitative results of our proposed method.<br><img src="/images/compare_more.jpg" alt="Qualitative results of our method"></p>
-<p>2.Comparison with other methods.<br><img src="/images/compareresult.jpg" alt="Visualization of comparison"></p>
-<p>3.Generalization for unseen object.<br><img src="/images/generalization.jpg" alt="Visualization of gneralization for unseen object."></p>
-<h2 id="Whole-process-of-CSGC"><a href="#Whole-process-of-CSGC" class="headerlink" title="Whole process of CSGC"></a>Whole process of CSGC</h2><p><img src="/images/semiSupervised.jpg" alt="Deployment"></p>
-<h4 id="Snapshots"><a href="#Snapshots" class="headerlink" title="Snapshots"></a>Snapshots</h4><p><img src="/images/real_robot.jpg" alt="Visualization of comparison"></p>
-<h4 id="GIF-of-manipulation"><a href="#GIF-of-manipulation" class="headerlink" title="GIF of manipulation"></a>GIF of manipulation</h4><table rules="none" align="center">
+            <h2 id="Comparison"><a href="#Comparison" class="headerlink" title="Comparison"></a>Comparison</h2><p>(a) Multiple objects of the same category (bottles) are present, and when the robot is in View 1 and doesn’t do anything, it cannot directly perceive the occluded target. (b) The robot utilizes its mobility to explore the target by rotating the bottles or changing its viewpoint (e.g., View 2 or View 3).<br><img src="/images/task.jpg" alt="knowledge-driven robotic grasping framework"></p>
+<h2 id="Overview-of-our-SAO-framework"><a href="#Overview-of-our-SAO-framework" class="headerlink" title="Overview of our SAO framework"></a>Overview of our SAO framework</h2><p>Overall architecture of our proposed SAO. The input image is processed by the fine-grained scene understanding module to generate detailed text and visual representations. User instructions are parsed to extract the target object’s name and its global attributes. These are fed into the multi-source matching module to calculate matching scores for each object in the scene. A target-oriented concept scene graph is constructed based on the above information. Finally, the dictionary variable format of the concept scene graph is incorporated into the triadic prompt engineering module, guiding the LLMs to generate policy codes. These codes guide the robot to actively perceive the desired object from the scene by performing actions such as grasping or observing.<br><img src="/images/ourMethod.jpg" alt="Overview of KARNet"></p>
+<!-- ## Qualitative results
+
+1.Qualitative results of our proposed method.
+![Qualitative results of our method](images/compare_more.jpg)
+
+2.Comparison with other methods.
+![Visualization of comparison](images/compareresult.jpg)
+
+3.Generalization for unseen object.
+![Visualization of gneralization for unseen object.](images/generalization.jpg)
+
+## Whole process of CSGC
+
+![Deployment](images/semiSupervised.jpg)
+
+#### Snapshots
+![Visualization of comparison](images/real_robot.jpg)
+
+#### GIF of manipulation
+
+<table rules="none" align="center">
     <tr>
         <td>
             <center>
@@ -94,20 +89,21 @@
             </center>
         </td>
     </tr>
-</table>
+</table> -->
 
 
-<h2 id="Faliure-cases"><a href="#Faliure-cases" class="headerlink" title="Faliure cases"></a>Faliure cases</h2><p>Typically, we face two failure situations:  subject recognition failure in long text and grasp failure for irregular or occluding objects.<br><img src="/images/failure_more.jpg" alt="Visualization of comparison"></p>
-
-            <!-- <a class="read-more" href="/2024/07/19/paper/"> ... </a> -->
+<!-- ## Faliure cases
+Typically, we face two failure situations:  subject recognition failure in long text and grasp failure for irregular or occluding objects.
+![Visualization of comparison](images/failure_more.jpg) -->
+            <!-- <a class="read-more" href="/2025/02/22/paper/"> ... </a> -->
         </div>
-        <div class="post-date">2024.07.19</div>
+        <div class="post-date">2025.02.22</div>
     </div>
     
 </div>
 
                 <div class="footer">
-    <span>Copyright © 2024 CSGC</span>
+    <span>Copyright © 2024 SAO</span>
     <span>Designed By <a target="_blank" href="https://github.com/xiejialong/CTNet/tree/web">Jialong Xie</a></span>
 </div>
 
