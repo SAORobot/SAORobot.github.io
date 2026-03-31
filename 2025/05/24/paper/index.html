@@ -41,20 +41,20 @@
             <h2 id="Comparison"><a href="#Comparison" class="headerlink" title="Comparison"></a>Comparison</h2><p>(a) Multiple objects of the same category (bottles) are present, and when the robot is in View 1 and doesn’t do anything, it cannot directly perceive the occluded target. (b) The robot utilizes its mobility to explore the target by rotating the bottles or changing its viewpoint (e.g., View 2 or View 3).<br><img src="/images/task.png" alt="knowledge-driven robotic grasping framework"></p>
 <h2 id="Overview-of-our-SAO-framework"><a href="#Overview-of-our-SAO-framework" class="headerlink" title="Overview of our SAO framework"></a>Overview of our SAO framework</h2><p>Overall architecture of our proposed SAO. The input image is processed by the fine-grained scene understanding module to generate detailed text and visual representations. User instructions are parsed to extract the target object’s name and its global attributes. These are fed into the multi-source matching module to calculate matching scores for each object in the scene. A target-oriented concept scene graph is constructed based on the above information. Finally, the dictionary variable format of the concept scene graph is incorporated into the triadic prompt engineering module, guiding the LLMs to generate policy codes. These codes guide the robot to actively perceive the desired object from the scene by performing actions such as grasping or observing.<br><img src="/images/our_Method.png" alt="Overview of SAOSAO"></p>
 <h2 id="Qualitative-results"><a href="#Qualitative-results" class="headerlink" title="Qualitative results"></a>Qualitative results</h2><p>The robot is requested to grasp the liver detox and vitamin B2 pill bottle, which is visual confusion or occlusion in the scene. To make the target visible, the robot need to adjust its viewpoint or manipulate the object’s orientation.<br><img src="/images/qualitative_experiment.png" alt="Qualitative results of our method"></p>
-<h4 id="GIF-of-manipulation"><a href="#GIF-of-manipulation" class="headerlink" title="GIF of manipulation"></a>GIF of manipulation</h4><table rules="none" align="center">
+<h4 id="Robot-Task-Success-Cases"><a href="#Robot-Task-Success-Cases" class="headerlink" title="Robot Task Success Cases"></a>Robot Task Success Cases</h4><table rules="none" align="center">
     <tr>
         <td>
             <center>
                 <img src="images/scene1.gif" width="60%" />
                 <br/>
-                <font color="AAAAAA">Scene 1</font>
+                <font color="AAAAAA">Scene 1：living room tabletop</font>
             </center>
         </td>
         <td>
             <center>
                 <img src="images/scene2.gif" width="60%" />
                 <br/>
-                <font color="AAAAAA">Scene 2</font>
+                <font color="AAAAAA">Scene 2：living room tabletop</font>
             </center>
         </td>
     </tr>
@@ -67,14 +67,14 @@
             <center>
                 <img src="images/scene3.gif" width="60%" />
                 <br/>
-                <font color="AAAAAA">Scene 3</font>
+                <font color="AAAAAA">Scene 3：living room tabletop</font>
             </center>
         </td>
         <td>
             <center>
                 <img src="images/scene4.gif" width="60%" />
                 <br/>
-                <font color="AAAAAA">Scene 4</font>
+                <font color="AAAAAA">Scene 4：living room tabletop</font>
             </center>
         </td>
     </tr>
@@ -87,20 +87,79 @@
             <center>
                 <img src="images/scene5.gif" width="60%" />
                 <br/>
-                <font color="AAAAAA">Scene 5</font>
+                <font color="AAAAAA">Scene 5：living room tabletop</font>
             </center>
         </td>
         <td>
             <center>
                 <img src="images/scene6.gif" width="60%" />
                 <br/>
-                <font color="AAAAAA">Scene 6</font>
+                <font color="AAAAAA">Scene 6：living room tabletop</font>
             </center>
         </td>
     </tr>
 </table> -->
 
 
+<table rules="none" align="center">
+    <tr>
+        <td>
+            <center>
+                <img src="images/scene7.gif" width="60%" />
+                <br/>
+                <font color="AAAAAA">Scene 7：kitchen setting</font>
+            </center>
+        </td>
+        <td>
+            <center>
+                <img src="images/scene8.gif" width="60%" />
+                <br/>
+                <font color="AAAAAA">Scene 8：kitchen setting</font>
+            </center>
+        </td>
+    </tr>
+</table> -->
+
+
+
+
+<h4 id="Robot-Task-Failure-Cases"><a href="#Robot-Task-Failure-Cases" class="headerlink" title="Robot Task Failure Cases"></a>Robot Task Failure Cases</h4><table rules="none" align="center">
+    <tr>
+        <td>
+            <center>
+                <img src="images/fail_scene_1.gif" width="60%" />
+                <br/>
+                <font color="AAAAAA">Failure demonstration 1</font>
+            </center>
+        </td>
+        <td>
+            <center>
+                <img src="images/fail_scene_2.gif" width="60%" />
+                <br/>
+                <font color="AAAAAA">Failure demonstration 2</font>
+            </center>
+        </td>
+    </tr>
+</table> -->
+
+<table rules="none" align="center">
+    <tr>
+        <td>
+            <center>
+                <img src="images/fail_scene_3.gif" width="60%" />
+                <br/>
+                <font color="AAAAAA">Failure demonstration 3</font>
+            </center>
+        </td>
+        <td>
+            <center>
+                <img src="images/fail_scene_4.gif" width="60%" />
+                <br/>
+                <font color="AAAAAA">Failure demonstration 4</font>
+            </center>
+        </td>
+    </tr>
+</table> -->
 
 
 
