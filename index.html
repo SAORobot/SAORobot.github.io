@@ -70,7 +70,7 @@
         
         <div class="post-except">
             <h2 id="Comparison"><a href="#Comparison" class="headerlink" title="Comparison"></a>Comparison</h2><p>(a) Multiple objects of the same category (bottles) are present, and when the robot is in View 1 and doesn’t do anything, it cannot directly perceive the occluded target. (b) The robot utilizes its mobility to explore the target by rotating the bottles or changing its viewpoint (e.g., View 2 or View 3).<br><img src="/images/task.png" alt="knowledge-driven robotic grasping framework"></p>
-<h2 id="Overview-of-our-SAO-framework"><a href="#Overview-of-our-SAO-framework" class="headerlink" title="Overview of our SAO framework"></a>Overview of our SAO framework</h2><p>Overall architecture of our proposed SAO. The input image is processed by the fine-grained scene understanding module to generate detailed text and visual representations. User instructions are parsed to extract the target object’s name and its global attributes. These are fed into the multi-source matching module to calculate matching scores for each object in the scene. A target-oriented concept scene graph is constructed based on the above information. Finally, the dictionary variable format of the concept scene graph is incorporated into the triadic prompt engineering module, guiding the LLMs to generate policy codes. These codes guide the robot to actively perceive the desired object from the scene by performing actions such as grasping or observing.<br><img src="/images/our_Method.png" alt="Overview of SAOSAO"></p>
+<h2 id="Overview-of-our-SAO-framework"><a href="#Overview-of-our-SAO-framework" class="headerlink" title="Overview of our SAO framework"></a>Overview of our SAO framework</h2><p>Overall architecture of our proposed SAO. The input image is processed by the fine-grained scene understanding module to generate detailed text and visual representations. User instructions are parsed to extract the target object’s name and its global attributes. These are fed into the multi-source matching module to calculate matching scores for each object in the scene. A target-oriented concept scene graph is constructed based on the above information. Finally, the dictionary variable format of the concept scene graph is incorporated into the triadic prompt engineering module, guiding the LLMs to generate policy codes. These codes guide the robot to actively perceive the desired object from the scene by performing actions such as grasping or observing.<br><img src="/images/Our_Method.png" alt="Overview of SAOSAO"></p>
 <h2 id="Qualitative-results"><a href="#Qualitative-results" class="headerlink" title="Qualitative results"></a>Qualitative results</h2><p>The robot is requested to grasp the liver detox and vitamin B2 pill bottle, which is visual confusion or occlusion in the scene. To make the target visible, the robot need to adjust its viewpoint or manipulate the object’s orientation.<br><img src="/images/qualitative_experiment.png" alt="Qualitative results of our method"></p>
 <h4 id="Robot-Task-Success-Cases"><a href="#Robot-Task-Success-Cases" class="headerlink" title="Robot Task Success Cases"></a>Robot Task Success Cases</h4><table rules="none" align="center">
     <tr>
@@ -130,6 +130,7 @@
         </td>
     </tr>
 </table> -->
+
 
 
 <table rules="none" align="center">
@@ -237,6 +238,9 @@
 <!-- ## Faliure cases
 Typically, we face two failure situations:  subject recognition failure in long text and grasp failure for irregular or occluding objects.
 ![Visualization of comparison](images/failure_more.jpg) -->
+
+
+
             <!-- <a class="read-more" href="/2025/05/24/paper/"> ... </a> -->
         </div>
         <div class="post-date">2025.05.24</div>
